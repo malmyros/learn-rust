@@ -6,4 +6,5 @@ fn main() {
 
     // String interpolation
     println!("My garden has {fruits} fruits");
+    println!("Apples are {0} and oranges are {1}", apples, oranges);
 }
