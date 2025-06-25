@@ -34,5 +34,16 @@ fn main() {
     println!("{}", empty_space.trim());
 
     let n: i32 = 2;
-    println!("{}", n.pow(2));   
+    println!("{}", n.pow(2));
+    
+    // Float types are always signed
+    let pie: f64 = std::f64::consts::PI;
+    println!("Pie value is: {}f64", pie);
+    println!("Pie value is: {}", pie.floor());
+    println!("Pie value is: {}", pie.ceil());
+    println!("Pie value is: {}", pie.round());
+    
+    // Alternative syntaxes for formatting floats
+    println!("Pie value is: {:.5}", pie);
+    println!("Pie value is: {pie:.5}");
 }
