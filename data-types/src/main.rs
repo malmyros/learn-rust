@@ -46,4 +46,8 @@ fn main() {
     // Alternative syntaxes for formatting floats
     println!("Pie value is: {:.5}", pie);
     println!("Pie value is: {pie:.5}");
+    
+    // Example of casting type using the as keyword
+    let miles_away: i32 = 50;
+    let miles_away_i8 = miles_away as i8;
 }
