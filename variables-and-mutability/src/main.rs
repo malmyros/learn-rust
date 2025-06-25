@@ -1,3 +1,6 @@
+
+const TAX_RATE: f64 = 7.25;
+
 fn main() {
     // Allocating values to immutable variables
     let apples: i32 = 5;
@@ -44,9 +47,11 @@ fn main() {
         let cookie_price: f64 = 2.45;
         
         // Value would be: My cookie price is 2.45
-        println!("My cookie price is {cookie_price}");
+        println!("My cookie price is {:.2}", cookie_price);
     }
 
     // Value would be: My cookie price is 2
-    println!("My cookie price is {cookie_price}");
+    println!("My cookie price is {:.2}", cookie_price);
+    
+    println!("Current tax rate is {:.2}", TAX_RATE);
 }
