@@ -34,4 +34,19 @@ fn main() {
     let _grams_of_protein: &str = "100.345";
     let grams_of_protein: f64 = 100.345;
     println!("My protein shake has {grams_of_protein} grams of protein");
+
+    /*
+    Example of defining an inner scope to show that
+    a variable with the same name won't be a shadow variable
+     */
+    let cookie_price: f64 = 2.00;
+    {
+        let cookie_price: f64 = 2.45;
+        
+        // Value would be: My cookie price is 2.45
+        println!("My cookie price is {cookie_price}");
+    }
+
+    // Value would be: My cookie price is 2
+    println!("My cookie price is {cookie_price}");
 }
