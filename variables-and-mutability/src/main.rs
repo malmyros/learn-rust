@@ -1,5 +1,6 @@
-
 const TAX_RATE: f64 = 7.25;
+
+type Meters = i32;
 
 fn main() {
     // Allocating values to immutable variables
@@ -45,13 +46,22 @@ fn main() {
     let cookie_price: f64 = 2.00;
     {
         let cookie_price: f64 = 2.45;
-        
+
         // Value would be: My cookie price is 2.45
         println!("My cookie price is {:.2}", cookie_price);
     }
 
     // Value would be: My cookie price is 2
     println!("My cookie price is {:.2}", cookie_price);
-    
+
+    // Printing a constant and formatting it to 2 decimal places
     println!("Current tax rate is {:.2}", TAX_RATE);
+
+    // Example of using type alias
+    let mile_race_length: Meters = 1600;
+    let two_mile_race_length: Meters = 3200;
+    println!(
+        "Mile race length is {0} meters and a two mile race length is {1} meters",
+        mile_race_length, two_mile_race_length
+    );
 }
