@@ -12,13 +12,20 @@ fn main() {
     // Unsigned Integers can be zero or positive numbers
     let eight_bit_unsinged: u8 = 112;
     let sixteen_bit_unsinged: u16 = 32_768;
-    
+
     // Alternative syntax (Not commonly used)
     let some_variable = 8i16;
-    
+
     // Rust allows us to use underscores to improve visibility
     let amount = 1_000_000;
-    
+
     let days: usize = 55;
     let years: isize = -15_000;
+
+    // Defining a string, which is a collection of characters
+    let file_path: &str = "/learn-rust/data_types/src/main.rs";
+    println!("Path: {}", file_path);
+
+    let raw_string: &str = r"C:/My Documents/new/documents";
+    println!("Raw string: {}", raw_string);
 }
