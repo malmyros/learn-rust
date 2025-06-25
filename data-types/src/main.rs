@@ -7,15 +7,18 @@ fn main() {
 
     // Signed Integers can be negative and positive numbers
     let eight_bit: i8 = -112;
-    let sixteen_bit: i16 = -32767;
+    let sixteen_bit: i16 = -32_767;
 
     // Unsigned Integers can be zero or positive numbers
     let eight_bit_unsinged: u8 = 112;
-    let sixteen_bit_unsinged: u16 = 32768;
+    let sixteen_bit_unsinged: u16 = 32_768;
     
     // Alternative syntax (Not commonly used)
     let some_variable = 8i16;
     
     // Rust allows us to use underscores to improve visibility
     let amount = 1_000_000;
+    
+    let days: usize = 55;
+    let years: isize = -15_000;
 }
