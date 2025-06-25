@@ -9,8 +9,8 @@ fn main() {
     println!("Apples are {0} and oranges are {1}", apples, oranges);
 
     /*
-        Example of an unused variable prefixed with _
-        to ignore compiler warnings (I wouldn't use that)
+    Example of an unused variable prefixed with _
+    to ignore compiler warnings (I wouldn't use that)
     */
     let _test: &str = "Some text to ignore warnings";
 
@@ -20,10 +20,18 @@ fn main() {
 
     gym_reps += 10;
     println!("My new Gym-Reps are {gym_reps}");
-    
+
     /*
-        If the variable wasn't mutable we could use explain
-        to find out more information
-        Ex. rustc --explain E0384
-     */
+    If the variable wasn't mutable we could use explain
+    to find out more information
+    Ex. rustc --explain E0384
+    */
+
+    /*
+    Example of variable shadowing for
+    resuing the same variable name
+    */
+    let _grams_of_protein: &str = "100.345";
+    let grams_of_protein: f64 = 100.345;
+    println!("My protein shake has {grams_of_protein} grams of protein");
 }
