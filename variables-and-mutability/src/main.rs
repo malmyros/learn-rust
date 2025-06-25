@@ -8,14 +8,22 @@ fn main() {
     println!("My garden has {fruits} fruits");
     println!("Apples are {0} and oranges are {1}", apples, oranges);
 
-    // Example of an unused variable prefixed with _
-    // to ignore compiler warnings (I wouldn't use that)
+    /*
+        Example of an unused variable prefixed with _
+        to ignore compiler warnings (I wouldn't use that)
+    */
     let _test: &str = "Some text to ignore warnings";
 
     // Example of using mut to define a variable as mutable
     let mut gym_reps: i32 = 10;
     println!("My Gym-Reps are {gym_reps}");
-    
+
     gym_reps += 10;
     println!("My new Gym-Reps are {gym_reps}");
+    
+    /*
+        If the variable wasn't mutable we could use explain
+        to find out more information
+        Ex. rustc --explain E0384
+     */
 }
