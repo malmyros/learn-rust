@@ -26,6 +26,13 @@ fn main() {
     let file_path: &str = "/learn-rust/data_types/src/main.rs";
     println!("Path: {}", file_path);
 
+    // Example of using the r to define the string as raw string
     let raw_string: &str = r"C:/My Documents/new/documents";
     println!("Raw string: {}", raw_string);
+
+    let empty_space: &str = "           my content     ";
+    println!("{}", empty_space.trim());
+
+    let n: i32 = 2;
+    println!("{}", n.pow(2));   
 }
