@@ -1,3 +1,5 @@
+// Example of using compiler directives globally
+// #![allow(unused_variables)]
 const TAX_RATE: f64 = 7.25;
 
 type Meters = i32;
@@ -64,4 +66,8 @@ fn main() {
         "Mile race length is {0} meters and a two mile race length is {1} meters",
         mile_race_length, two_mile_race_length
     );
+
+    // Example of using compiler directives
+    #[allow(unused_variables)]
+    let some_new_miles: Meters = 2000;
 }
