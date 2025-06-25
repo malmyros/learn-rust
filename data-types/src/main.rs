@@ -15,4 +15,7 @@ fn main() {
     
     // Alternative syntax (Not commonly used)
     let some_variable = 8i16;
+    
+    // Rust allows us to use underscores to improve visibility
+    let amount = 1_000_000;
 }
