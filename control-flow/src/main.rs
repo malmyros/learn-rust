@@ -47,7 +47,7 @@ fn main() {
         seconds -= 1;
     }
 
-    countdown(5)
+    countdown(5);
 }
 
 fn even_or_odd(value: i32) -> () {
