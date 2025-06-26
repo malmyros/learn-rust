@@ -50,4 +50,22 @@ fn main() {
     // Example of casting type using the as keyword
     let miles_away: i32 = 50;
     let miles_away_i8 = miles_away as i8;
+    
+    let addition = 5 + 4;
+    let subtraction = 5 - 4;
+    let multiplication = 5 * 4;
+
+    /*
+    Rust performs floor division when dividing an
+    integer with another integer, which will gives us
+    the total times the divisor can divide the integer 
+    */
+    let division = 5 / 3;
+    println!("Division is: {}", division);
+    
+    let decimal_division = 5.0 / 3.0;
+    println!("Decimal division is: {}", decimal_division);
+    
+    let remainder = 7 % 1;
+    println!("Remainder is: {}", remainder);
 }
