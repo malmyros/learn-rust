@@ -139,4 +139,17 @@ fn main() {
     println!("Apples: {:?}", apples);
     println!("Currency rates: {:?}", currency_rates);
     println!("Length: {}", currency_rates.len());
+    
+    let first_rate = currency_rates[0];
+    let second_rate = currency_rates[1];
+    println!("first_rate: {:.2}, second_rate: {:.2}", first_rate, second_rate);
+
+    /*
+    In Rust, we can't add more element we can only replace elements
+    when we make the array mutable with the mut keyword
+    */
+    let mut seasons: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];
+    seasons[2] = "Autumn";
+    println!("seasons: {:?}", seasons);
+    
 }
