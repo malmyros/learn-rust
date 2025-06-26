@@ -10,6 +10,13 @@ fn main() {
         false => 10,
     };
     println!("The result is {}", result);
+
+    let season: &str = "autumn";
+    match season {
+        "summer" => println!("School's out"),
+        "winter" => println!("Brr, so cold"),
+        _ => println!("Lots of rain"),
+    }
 }
 
 fn even_or_odd(value: i32) -> () {
