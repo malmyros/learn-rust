@@ -57,13 +57,21 @@ fn main() {
 
     /*
     Rust performs floor division when dividing an
-    integer with another integer, which will gives us
-    the total times the divisor can divide the integer
+    integer with another integer, which rounds down
+    the result to the nearest integer less than or equal
+    to the division result
+
+    5 / 3 = 1.6 -> rounding down to 1
     */
-    let division = 5 / 3;
+    let division: i32 = 5 / 3;
     println!("Division is: {}", division);
 
-    let decimal_division = 5.0 / 3.0;
+    /*
+    On the other hand Rust performs division
+    when dividing with float numbers retaining
+    the decimal places
+     */
+    let decimal_division: f64 = 5.0 / 3.0;
     println!("Decimal division is: {}", decimal_division);
 
     let remainder = 7 % 1;
@@ -72,13 +80,13 @@ fn main() {
     let mut year = 2025;
     year += 1;
     println!("year: {}", year);
-    
+
     year -= 5;
     println!("year: {}", year);
-    
+
     year *= 10;
     println!("year: {}", year);
-    
+
     year /= 10;
     println!("year: {}", year);
 }
