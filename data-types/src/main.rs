@@ -89,4 +89,11 @@ fn main() {
 
     year /= 10;
     println!("year: {}", year);
+    
+    let age: i32 = 32;
+    println!("Age is positive: {}", age.is_positive());
+    println!("Age is negative: {}", age.is_negative());
+    
+    let is_greater: bool = 10 > 5;
+    println!("is_greater: {}", is_greater);
 }
