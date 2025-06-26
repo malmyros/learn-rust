@@ -152,5 +152,6 @@ fn main() {
     seasons[2] = "Autumn";
     println!("seasons: {:?}", seasons);
     println!("seasons: {seasons:?}");
+    println!("seasons: {seasons:#?}");
 
 }
