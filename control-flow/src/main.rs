@@ -40,6 +40,12 @@ fn main() {
         println!("{} seconds to blastoff...", seconds);
         seconds -= 1;
     }
+    
+    seconds = 10;
+    while seconds > 0 {
+        println!("{} seconds to blastoff...", seconds);
+        seconds -= 1;
+    }
 }
 
 fn even_or_odd(value: i32) -> () {
