@@ -40,12 +40,14 @@ fn main() {
         println!("{} seconds to blastoff...", seconds);
         seconds -= 1;
     }
-    
+
     seconds = 10;
     while seconds > 0 {
         println!("{} seconds to blastoff...", seconds);
         seconds -= 1;
     }
+
+    countdown(5)
 }
 
 fn even_or_odd(value: i32) -> () {
@@ -53,5 +55,15 @@ fn even_or_odd(value: i32) -> () {
     match is_even {
         true => println!("{} is Even!", value),
         false => println!("{} is Odd!", value),
+    }
+}
+
+fn countdown(seconds: i32) {
+    if seconds == 0 {
+        println!("Blastoff!");
+        return;
+    } else {
+        println!("seconds {} to blastoff...", seconds);
+        countdown(seconds - 1)
     }
 }
