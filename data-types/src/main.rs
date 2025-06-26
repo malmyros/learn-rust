@@ -126,4 +126,17 @@ fn main() {
         first_initial.is_uppercase(),
         emoji.is_alphabetic()
     );
+
+    /*
+    Arrays have fixed length which means
+    we need to have the exact amount of elements
+    we have specified in the data type
+    */
+    let elements: [i32; 4] = [1, 2, 3, 4];
+    let apples: [&str; 3] = ["red apple", "yellow apple", "green apple"];
+    let currency_rates: [f64; 3] = [1.0, 3.0, 4.0];
+    println!("Elements: {:?}", elements);
+    println!("Apples: {:?}", apples);
+    println!("Currency rates: {:?}", currency_rates);
+    println!("Length: {}", currency_rates.len());
 }
