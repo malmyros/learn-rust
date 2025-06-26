@@ -142,7 +142,10 @@ fn main() {
 
     let first_rate = currency_rates[0];
     let second_rate = currency_rates[1];
-    println!("first_rate: {:.2}, second_rate: {:.2}", first_rate, second_rate);
+    println!(
+        "first_rate: {:.2}, second_rate: {:.2}",
+        first_rate, second_rate
+    );
 
     /*
     In Rust, we can't add more element we can only replace elements
@@ -155,4 +158,17 @@ fn main() {
     println!("seasons: {seasons:#?}");
     dbg!(seasons);
 
+    // Defining a Tuple
+    let employee: (&str, i32, &str) = ("Molly", 32, "Marketing");
+    let name = employee.0;
+    let age = employee.1;
+    let department = employee.2;
+    println!("{employee:?}");
+    println!("Name: {}, age: {}, department: {}", name, age, department);
+
+    // Destructuring a Tuple
+    let (name, age, department) = employee;
+    println!("Name: {}, age: {}, department: {}", name, age, department);
+
+    let employees = ("Molly", 32, "Marketing", "John", 32, "Marketing");
 }
