@@ -89,11 +89,20 @@ fn main() {
 
     year /= 10;
     println!("year: {}", year);
-    
+
     let age: i32 = 32;
     println!("Age is positive: {}", age.is_positive());
     println!("Age is negative: {}", age.is_negative());
-    
+
     let is_greater: bool = 10 > 5;
     println!("is_greater: {}", is_greater);
+
+    let first_initial: char = 'M';
+    let emoji: char = '😄';
+    println!(
+        "is alphabetic {}, is uppercase {}, is emoji alphabetic {}",
+        first_initial.is_alphabetic(),
+        first_initial.is_uppercase(),
+        emoji.is_alphabetic()
+    );
 }
