@@ -17,6 +17,18 @@ fn main() {
         "winter" => println!("Brr, so cold"),
         _ => println!("Lots of rain"),
     }
+
+    let number: i32 = 8;
+    match number {
+        2 | 4 | 6 | 8 => println!("The number {} is even", number),
+        1 | 3 | 5 | 9 => println!("The number {} is odd", number),
+        _ => println!("The number {} is an invalid case", number),
+    }
+
+    match number {
+        value if value % 2 == 0 => println!("The number {} is even", number),
+        _ => unreachable!()
+    }
 }
 
 fn even_or_odd(value: i32) -> () {
