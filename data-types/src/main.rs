@@ -153,5 +153,6 @@ fn main() {
     println!("seasons: {:?}", seasons);
     println!("seasons: {seasons:?}");
     println!("seasons: {seasons:#?}");
+    dbg!(seasons);
 
 }
