@@ -27,7 +27,18 @@ fn main() {
 
     match number {
         value if value % 2 == 0 => println!("The number {} is even", number),
-        _ => unreachable!()
+        _ => unreachable!(),
+    }
+
+    let mut seconds = 10;
+    loop {
+        if seconds == 0 {
+            println!("Blastoof! {}", seconds);
+            break;
+        }
+
+        println!("{} seconds to blastoff...", seconds);
+        seconds -= 1;
     }
 }
 
