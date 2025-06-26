@@ -1,4 +1,7 @@
 #![allow(unused_variables)]
+
+use std::ops::{Range, RangeInclusive};
+
 fn main() {
     /*
     Rust automatically infers the type, but we can also assign
@@ -173,24 +176,24 @@ fn main() {
     let employees = ("Molly", 32, "Marketing", "John", 32, "Marketing");
 
     // Range 1 to 31 = 1..30
-    let months_days = 1..31;
+    let months_days: Range<i32> = 1..31;
     println!("{months_days:?}");
-    
+
     // Range with including 31 1 to 31 = 1..31
-    let months_days = 1..=31;
+    let months_days: RangeInclusive<i32> = 1..=31;
     println!("{months_days:?}");
-    
+
     for day in months_days {
         print!("{day} ");
     }
     print!("\n");
-    
-    let letters = 'b'..'f';
+
+    let letters: Range<char> = 'b'..'f';
     for letter in letters {
         print!("{} ", letter);
     }
     print!("\n");
-    
+
     let color = ["Red", "Green", "Blue"];
     for color in color.iter() {
         print!("{} ", color);
