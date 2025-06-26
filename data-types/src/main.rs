@@ -105,4 +105,25 @@ fn main() {
         first_initial.is_uppercase(),
         emoji.is_alphabetic()
     );
+
+    /*
+    Arrays have a fixed length, we need to have
+    the exact amount of elements we have defined
+    in the type
+    */
+    let numbers: [i32; 4] = [1, 2, 3, 4];
+
+    let apples: [&str; 3] = ["granny smith", "mcintosh", "red delicious"];
+    println!("Length: {}", apples.len());
+
+    let currency_rates: [f64; 3] = [1.0, 3.0, 4.0];
+
+    let first_initial: char = 'M';
+    let emoji: char = '😄';
+    println!(
+        "is alphabetic {}, is uppercase {}, is emoji alphabetic {}",
+        first_initial.is_alphabetic(),
+        first_initial.is_uppercase(),
+        emoji.is_alphabetic()
+    );
 }
