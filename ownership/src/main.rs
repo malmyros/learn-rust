@@ -63,4 +63,17 @@ fn main() {
      */
     let person = String::from("Michail");
     let genius = person;
+
+    /*
+    Rust will call the drop function when a variable gets out of
+    scope, but we can also call it ourselves. After calling the drop
+    function if we try to use the variable we will get the error:
+    Value used after being moved [E0382]
+    
+    We also can't transfer the ownership to another variable
+    because the ownership was removed from the variable.
+    So doing let someone = genius will cause an error as well
+    */
+    drop(genius);
+    
 }
