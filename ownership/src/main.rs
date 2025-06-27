@@ -117,11 +117,11 @@ fn main() {
      */
 
     let burger = String::from("Burger");
-    let meal = add_frieds(burger);
+    let meal = add_fries(burger);
     println!("{}", meal);
 }
 
-fn add_frieds(mut meal: String) -> String {
+fn add_fries(mut meal: String) -> String {
     meal.push_str(" and Fries");
     meal
 }
