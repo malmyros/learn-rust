@@ -74,7 +74,7 @@ fn main() {
     because the ownership was removed from the variable.
     So doing let someone = genius will cause an error as well
     */
-    // drop(genius);
+    drop(genius);
 
     /*
     Because we use clone now there is no transfer of ownership,
@@ -82,4 +82,18 @@ fn main() {
      */
     let new_person = String::from("Michail");
     let new_genius = new_person.clone();
+
+    /*
+    The & is the borrow operator because it borrows another value
+    meaning it creates a reference.
+    
+    Example: &i32 can be read as a reference to i32
+    
+    We are no longer cloning, but we are copying the reference to the value
+     */
+    let my_stack_value: i32 = 2;
+    let my_integer_reference: &i32 = &my_stack_value;
+    let my_heap_value = String::from("Toyota");
+    let my_heap_reference = &my_heap_value;
+    
 }
