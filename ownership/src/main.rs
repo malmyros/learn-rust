@@ -111,8 +111,17 @@ fn main() {
 
     Example: println!("{}", *my_heap_value);
     The size for values of type `str` cannot be known at compilation time [E0277]
-    
-    Finally, Rust's display trait automatically dereferences 
+
+    Finally, Rust's display trait automatically dereferences
     so we don't need to explicitly, use the operator
      */
+
+    let burger = String::from("Burger");
+    let meal = add_frieds(burger);
+    println!("{}", meal);
+}
+
+fn add_frieds(mut meal: String) -> String {
+    meal.push_str(" and Fries");
+    meal
 }
