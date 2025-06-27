@@ -48,15 +48,15 @@ fn main() {
     and therefore Rust will not make a copy of this heap data
     when person is reassigned to genius, that would create a
     duplicate of heaps text data, which will probably occupy
-    more memory that something on the stack. 
-    
+    more memory that something on the stack.
+
     Data in the heap can grow, where data in the stack is fixed
-    
+
     Instead, here we will have 2 references in the stack but
     the ownership is moved from person to genius, which means
     person goes out of scope, and genius will be responsible
     for deallocating the memory.
-    
+
     If we try to do println!("{}", person);
     then Rust will give the following error:
     Value used after being moved [E0382]
@@ -69,11 +69,17 @@ fn main() {
     scope, but we can also call it ourselves. After calling the drop
     function if we try to use the variable we will get the error:
     Value used after being moved [E0382]
-    
+
     We also can't transfer the ownership to another variable
     because the ownership was removed from the variable.
     So doing let someone = genius will cause an error as well
     */
-    drop(genius);
-    
+    // drop(genius);
+
+    /*
+    Because we use clone now there is no transfer of ownership,
+    and there are two district pieces of data in the heap
+     */
+    let new_person = String::from("Michail");
+    let new_genius = new_person.clone();
 }
