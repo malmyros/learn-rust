@@ -6,6 +6,12 @@ fn main() {
     going to have the value of 2025 twice in the stack
     */
     let time = 2025;
+
+    /*
+    This is a full copy of the value of time in the year variable
+    Year is the owner and is responsible for cleaning up the value
+    when exiting the scope of the main function
+    */
     let year = time;
 
     /*
@@ -23,5 +29,38 @@ fn main() {
      */
     let text = String::new();
     let candy = String::from("KitKat");
+
+    /*
+    The Stack contains:
+        Reference -> The address to the heap location where the text is stored,
+        Length of the string, which is the current number of bytes that the text occupies: 7,
+        Capacity the amount of bytes available in the heap location: 10
+    The Heap contains: Michail
+     */
+    let mut name = String::from("Michail");
+    println!("{}", name);
+
+    name.push_str(" Almyros");
+    println!("{}", name);
+
+    /*
+    A heap allocated string doesn't implement the copy trait
+    and therefore Rust will not make a copy of this heap data
+    when person is reassigned to genius, that would create a
+    duplicate of heaps text data, which will probably occupy
+    more memory that something on the stack. 
     
+    Data in the heap can grow, where data in the stack is fixed
+    
+    Instead, here we will have 2 references in the stack but
+    the ownership is moved from person to genius, which means
+    person goes out of scope, and genius will be responsible
+    for deallocating the memory.
+    
+    If we try to do println!("{}", person);
+    then Rust will give the following error:
+    Value used after being moved [E0382]
+     */
+    let person = String::from("Michail");
+    let genius = person;
 }
