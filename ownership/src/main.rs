@@ -86,14 +86,33 @@ fn main() {
     /*
     The & is the borrow operator because it borrows another value
     meaning it creates a reference.
-    
+
     Example: &i32 can be read as a reference to i32
-    
+
     We are no longer cloning, but we are copying the reference to the value
      */
     let my_stack_value: i32 = 2;
     let my_integer_reference: &i32 = &my_stack_value;
     let my_heap_value = String::from("Toyota");
     let my_heap_reference = &my_heap_value;
+
+    /*
+    The * is the deference operator which means to access the
+    data that the reference points to.
+
+    Get the address -> Go to the address -> Get the value of the address
+    */
+    println!("{}", *my_integer_reference);
+    println!("{}", *my_heap_reference);
+
+    /*
+    The * operator can only be used with a reference if we try to use
+    it with a regular value Rust will give the error:
+
+    Example: println!("{}", *my_heap_value);
+    The size for values of type `str` cannot be known at compilation time [E0277]
     
+    Finally, Rust's display trait automatically dereferences 
+    so we don't need to explicitly, use the operator
+     */
 }
