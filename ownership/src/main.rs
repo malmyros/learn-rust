@@ -119,9 +119,31 @@ fn main() {
     let burger = String::from("Burger");
     let meal = add_fries(burger);
     println!("{}", meal);
+
+    let cake = bake_cake();
+    println!("I know have a {} cake", cake);
+
+    let mut current_meal = String::new();
+    current_meal = add_flour(current_meal);
+    current_meal = add_sugar(current_meal);
+    println!("{}", current_meal);
 }
 
 fn add_fries(mut meal: String) -> String {
     meal.push_str(" and Fries");
     meal
+}
+
+fn add_sugar(mut meal: String) -> String {
+    meal.push_str(", Add sugar");
+    meal
+}
+
+fn add_flour(mut meal: String) -> String {
+    meal.push_str("Add flour");
+    meal
+}
+
+fn bake_cake() -> String {
+    String::from("Chocolate Mousse")
 }
