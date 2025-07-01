@@ -56,7 +56,17 @@ fn main() {
     let languages: [&str; 3] = ["Rust", "Go", "Java"];
     let language_slices: &[&str] = &languages[..2];
     println!("Language slices: {:?}", language_slices);
+    
+    let values: [i32; 6] = [1, 2, 3, 4, 5, 6];
+    let regular_reference: &[i32; 6] = &values;
+    let slice_of_three = &values[..3];
+    print_length(regular_reference);
+    print_length(slice_of_three);
 }
 fn do_hero_stuff(hero_name: &str) {
     println!("{hero_name} saves the day");
+}
+
+fn print_length(reference: &[i32]) {
+    println!("The length of reference is {}", reference.len());
 }
