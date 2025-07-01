@@ -48,7 +48,12 @@ fn main() {
     let actor_last_name: &str = &action_hero[7..];
     println!("Actor: {}", actor_first_name);
     println!("Actor: {}", actor_last_name);
-    
+
     let actor_full_name: &str = &action_hero[..];
     println!("Actor: {}", actor_full_name);
+
+    do_hero_stuff(action_hero)
+}
+fn do_hero_stuff(hero_name: &str) {
+    println!("{hero_name} saves the day");
 }
