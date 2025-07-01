@@ -51,12 +51,54 @@ fn main() {
     /*
     A dangling reference is a pointer
     to a memory address that has been deallocated
-    
+
     Dangle means to hang loosely or unreliably
-    
+
     So a dangling reference is an unreliable reference to an address
     let city: String = create_city();
      */
+
+    /*
+    registrations is the owner of the array which is the owner
+    of these 3 elements and remains the owner of the 3 booleans
+    even when we extract the value from the array
+    */
+    let registrations: [bool; 3] = [true, false, true];
+
+    /*
+    The bool type implements the copy trait and therefore when we
+    extract the first element Rust creates a full copy of the boolean
+    and assigns it to the first_element variable
+    */
+    let first_element: bool = registrations[0];
+    println!("First element is {}", first_element);
+
+    /*
+    The String type does not implement the copy trait which means
+    that ownership would move from languages to the first_language variable.
+    
+    Because of this we need to use the clone method on the String type that
+    does not move the ownership, rather it creates a full copy.
+    */
+    let languages: [String; 2] = [String::from("Rust"), String::from("Go")];
+    let first_language = languages[0].clone();
+    println!("First Language: {}", first_language);
+    
+    /*
+    Instead of coping the value and using additional memory we can borrow a reference,
+    which will also prevent the movement of ownership from the languages array 
+     */
+    let first_language_reference: &String = &languages[0];
+    println!("First Language Reference: {}", first_language_reference);
+    
+    /*
+    Example of using borrow reference with tuples
+     */
+    let alternative_languages = (String::from("Rust"), String::from("Go"));
+    let first_alternative_language: String = alternative_languages.0.clone();
+    let first_alternative_language_reference: &String = &alternative_languages.0;
+    println!("Alternative Language: {}", first_alternative_language);
+    println!("Alternative Language Reference: {}", first_alternative_language_reference);
 }
 
 /*
