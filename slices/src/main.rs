@@ -66,15 +66,15 @@ fn main() {
     /*
     Rust does not permit mutable slices of Strings,
     if we are borrowing a string slice we can only do it immutably.
-    
+
     However, Rust does permit mutable slices of arrays
      */
     let mut some_values: [i32; 4] = [1, 2, 3, 4];
-    
+
     // An immutable slice
     let my_slice = &some_values[2..4];
     println!("my_slice: {:?}", my_slice);
-    
+
     // A mutable slice
     let mutable_slice = &mut some_values[2..4];
     mutable_slice[0] = 10;
