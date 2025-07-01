@@ -40,4 +40,15 @@ fn main() {
     */
     let crab: &str = "🦀";
     println!("Length: {}", crab.len());
+
+    /*
+    Syntactic Shortcuts
+     */
+    let actor_first_name: &str = &action_hero[..6];
+    let actor_last_name: &str = &action_hero[7..];
+    println!("Actor: {}", actor_first_name);
+    println!("Actor: {}", actor_last_name);
+    
+    let actor_full_name: &str = &action_hero[..];
+    println!("Actor: {}", actor_full_name);
 }
