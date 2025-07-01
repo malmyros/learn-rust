@@ -51,8 +51,11 @@ fn main() {
 
     let actor_full_name: &str = &action_hero[..];
     println!("Actor: {}", actor_full_name);
-
-    do_hero_stuff(action_hero)
+    do_hero_stuff(action_hero);
+    
+    let languages: [&str; 3] = ["Rust", "Go", "Java"];
+    let language_slices: &[&str] = &languages[..2];
+    println!("Language slices: {:?}", language_slices);
 }
 fn do_hero_stuff(hero_name: &str) {
     println!("{hero_name} saves the day");
