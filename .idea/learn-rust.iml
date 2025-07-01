@@ -7,11 +7,13 @@
       <sourceFolder url="file://$MODULE_DIR$/functions/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ownership/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/variables-and-mutability/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/references-and-borrowing/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/control-flow/target" />
       <excludeFolder url="file://$MODULE_DIR$/data-types/target" />
       <excludeFolder url="file://$MODULE_DIR$/functions/target" />
       <excludeFolder url="file://$MODULE_DIR$/ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/variables-and-mutability/target" />
+      <excludeFolder url="file://$MODULE_DIR$/references-and-borrowing/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
