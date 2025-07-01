@@ -121,13 +121,28 @@ fn main() {
     println!("{}", meal);
 
     let cake = bake_cake();
-    println!("I know have a {} cake", cake);
+    println!("I now have a {} cake", cake);
 
     let mut current_meal = String::new();
-    current_meal = add_flour(current_meal);
+    add_flour(&mut current_meal);
     current_meal = add_sugar(current_meal);
-    println!("{}", current_meal);
+    
+    /*
+    We need to use the correct type &String
+    which is an immutable reference of String
+    that uses the & borrow operator.
+     */
+    show_my_meal(&current_meal);
 }
+
+// meal: String 
+// mut meal: String
+
+// It's no longer a string but a reference to a string "An address"
+// meal: &String
+
+// A mutable reference to a String
+// meal: &mut String
 
 fn add_fries(mut meal: String) -> String {
     meal.push_str(" and Fries");
@@ -139,11 +154,18 @@ fn add_sugar(mut meal: String) -> String {
     meal
 }
 
-fn add_flour(mut meal: String) -> String {
+fn add_flour(meal: &mut String) {
     meal.push_str("Add flour");
-    meal
 }
 
 fn bake_cake() -> String {
     String::from("Chocolate Mousse")
+}
+
+/*
+We are using &String to declare an immutable reference to
+the current_meal.  
+ */
+fn show_my_meal(current_meal: &String) {
+    println!("Meal steps: {}", current_meal);
 }
