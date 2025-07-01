@@ -62,6 +62,24 @@ fn main() {
     let slice_of_three = &values[..3];
     print_length(regular_reference);
     print_length(slice_of_three);
+
+    /*
+    Rust does not permit mutable slices of Strings,
+    if we are borrowing a string slice we can only do it immutably.
+    
+    However, Rust does permit mutable slices of arrays
+     */
+    let mut some_values: [i32; 4] = [1, 2, 3, 4];
+    
+    // An immutable slice
+    let my_slice = &some_values[2..4];
+    println!("my_slice: {:?}", my_slice);
+    
+    // A mutable slice
+    let mutable_slice = &mut some_values[2..4];
+    mutable_slice[0] = 10;
+    println!("mutable_slice: {:?}", mutable_slice);
+    println!("some_values: {:?}", some_values);
 }
 fn do_hero_stuff(hero_name: &str) {
     println!("{hero_name} saves the day");
