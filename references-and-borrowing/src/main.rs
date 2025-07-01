@@ -47,4 +47,38 @@ fn main() {
     */
     println!("{}", c);
     println!("{}", new_coffee);
+
+    /*
+    A dangling reference is a pointer
+    to a memory address that has been deallocated
+    
+    Dangle means to hang loosely or unreliably
+    
+    So a dangling reference is an unreliable reference to an address
+    let city: String = create_city();
+     */
 }
+
+/*
+Example of a function that would return a dangling reference
+fn create_city() -> &String {
+let city: String = String::from("Athens");
+&city
+}
+
+The Rust Compiler won't allow us to do this because at end of the
+function the city variable gets out of scope and therefore there
+won't be any value to reference anymore.
+
+Instead, the Rust Compiler suggests us to return the variable as is
+fn create_city() -> String {
+    let city: String = String::from("Athens");
+    city
+}
+
+or
+
+fn create_city() -> String {
+    String::from("Athens")
+}
+*/
