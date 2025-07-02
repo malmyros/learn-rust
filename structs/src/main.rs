@@ -42,9 +42,12 @@ fn main() {
     beverage.name = String::from("Latte Caramel Macchiato");
     beverage.price = 6.99;
     beverage.is_hot = false;
-    
+
     print_coffee(&mocha);
     print_coffee(&beverage);
+
+    let coffee: Coffee = make_coffee(String::from("Brown sugar oat shaken espresso"), 5.33, false);
+    print_coffee(&coffee);
 }
 
 struct Coffee {
@@ -56,6 +59,20 @@ struct Coffee {
 fn print_coffee(coffee: &Coffee) {
     println!(
         "Coffee: {}, costs {}, and {}",
-        coffee.name, coffee.price, if coffee.is_hot {"it's hot"} else {"it's not hot"}
+        coffee.name,
+        coffee.price,
+        if coffee.is_hot {
+            "it's hot"
+        } else {
+            "it's not hot"
+        }
     );
+}
+
+fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {
+    Coffee {
+        name: name,
+        price: price,
+        is_hot: is_hot,
+    }
 }
