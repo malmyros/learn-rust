@@ -6,9 +6,17 @@ Types of Structs are:
     - Named Field Structs
     - Tuple-Like Structs
     - Unit-Like Structs
+
+An instance is the concrete value made from a type
  */
 
 fn main() {
+    let mocha: Coffee = Coffee {
+        name: String::from("Mocha"),
+        price: 5.64,
+        is_hot: true,
+    };
+    
     
 }
 
