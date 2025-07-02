@@ -17,7 +17,21 @@ fn main() {
         is_hot: true,
     };
     
+    println!("mocha name: {}", mocha.name);
+    println!("mocha price: £{:.2}", mocha.price);
+    println!("mocha is_hot: {}", mocha.is_hot);
     
+    /*
+    Doing this will move ownership of the name field
+    from the mocha object to the my_favourite_coffee
+    
+    let my_favourite_coffee = mocha.name;
+    
+    Before of this the compiler won't allow us to
+    do something like this:
+    
+    println!("{}", mocha.name);
+     */
 }
 
 struct Coffee {
