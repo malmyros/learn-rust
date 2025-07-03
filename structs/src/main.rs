@@ -48,7 +48,7 @@ fn main() {
 
     let coffee: Coffee = make_coffee(String::from("Brown sugar oat shaken espresso"), 5.33, false);
     print_coffee(&coffee);
-    
+
     let new_coffee = Coffee {
         name: String::from("New coffee"),
         ..coffee
@@ -92,4 +92,32 @@ fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {
         price: price,
         is_hot: is_hot,
     }
+}
+
+// Passing an immutable Coffee Struct instance
+fn drink_coffee(coffee: Coffee) {
+    println!("Drinking my delicious {}", coffee.name);
+}
+
+// Passing a mutable Coffee Struct instance
+fn drink_coffee_mutable(mut coffee: Coffee) {
+    println!("Drinking my delicious {}", coffee.name);
+    coffee.is_hot = false;
+}
+
+/*
+Passing a reference to a coffee, an address in memory
+that we can follow to get a coffee from memory
+
+&Coffee is a different type than Coffee
+
+The &Coffee is read only as it's immutable
+*/
+fn drink_coffee_reference(coffee: &Coffee) {
+    println!("Drinking my delicious {}", coffee.name);   
+}
+
+fn drink_coffee_mutable_reference(coffee: &mut Coffee) {
+    println!("Drinking my delicious {}", coffee.name);
+    coffee.is_hot = false;
 }
