@@ -48,6 +48,23 @@ fn main() {
 
     let coffee: Coffee = make_coffee(String::from("Brown sugar oat shaken espresso"), 5.33, false);
     print_coffee(&coffee);
+    
+    let new_coffee = Coffee {
+        name: String::from("New coffee"),
+        ..coffee
+    };
+    print_coffee(&new_coffee);
+
+    /*
+    Strings in Rust don't implement the copy trait,
+    and therefore we have to clone the value otherwise
+    we will have issue with the ownership of the name
+    */
+    let another_coffee = Coffee {
+        name: new_coffee.name.clone(),
+        ..coffee
+    };
+    print_coffee(&another_coffee);
 }
 
 struct Coffee {
