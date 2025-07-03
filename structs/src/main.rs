@@ -65,8 +65,12 @@ fn main() {
         ..coffee
     };
     print_coffee(&another_coffee);
+
+    // Printing using the standard debug trait implementation
+    println!("{:#?}", another_coffee);
 }
 
+#[derive(Debug)]
 struct Coffee {
     name: String,
     price: f64,
@@ -95,11 +99,13 @@ fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {
 }
 
 // Passing an immutable Coffee Struct instance
+#[allow(dead_code)]
 fn drink_coffee(coffee: Coffee) {
     println!("Drinking my delicious {}", coffee.name);
 }
 
 // Passing a mutable Coffee Struct instance
+#[allow(dead_code)]
 fn drink_coffee_mutable(mut coffee: Coffee) {
     println!("Drinking my delicious {}", coffee.name);
     coffee.is_hot = false;
@@ -113,10 +119,12 @@ that we can follow to get a coffee from memory
 
 The &Coffee is read only as it's immutable
 */
+#[allow(dead_code)]
 fn drink_coffee_reference(coffee: &Coffee) {
-    println!("Drinking my delicious {}", coffee.name);   
+    println!("Drinking my delicious {}", coffee.name);
 }
 
+#[allow(dead_code)]
 fn drink_coffee_mutable_reference(coffee: &mut Coffee) {
     println!("Drinking my delicious {}", coffee.name);
     coffee.is_hot = false;
